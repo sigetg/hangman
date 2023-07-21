@@ -103,9 +103,9 @@ if input == "1"
   end
   filename = "saved_games/#{input}"
   game = load_game(filename)
-else
+elsif input == "2"
   game = Game.new(select_random_word().split(''))
-  puts game.random_word_array.join
+  puts "New game started! Please guess a letter or type 'save' to save game."
 end
 
 while game.guesses_remaining > 0
@@ -119,6 +119,6 @@ while game.guesses_remaining > 0
     puts game.guess_array.join(' ')
   end
   if game.guesses_remaining == 0
-    puts "You ran out of guesses! The word was #{game.random_word_array}."
+    puts "You ran out of guesses! The word was '#{game.random_word_array.join}'."
   end
 end
